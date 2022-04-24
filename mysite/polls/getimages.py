@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 
 filteron = False
 getfilter = "Action"
@@ -34,6 +35,18 @@ content_type = "movie"
 key = dict[getfilter]
 
 
+def savetocsv(result_list):
+    df = pd.read_csv("D:\\mdl\\home.csv")
+    df3 = pd.DataFrame()
+    for i in range(10):
+        act.append(result_list[i])
+        temp = act[i]
+        df3 = df3.append({'tmdb': temp["id"], 'type' : content_type}, ignore_index=True)
+        print(df3)
+
+    df3.to_csv("D:\\mdl\\home.csv", mode = 'a', header = False, index = False)
+
+
 if (filteron):
     apiresponse = requests.get(
         "https://api.themoviedb.org/3/discover/"+content_type+"?api_key=3af4a550e843ce38440160234f2569ed&language="+language2+
@@ -56,6 +69,8 @@ if (filteron):
             "wb")
         file.write(response.content)
         file.close()
+
+    savetocsv(result_list)
 else:
     apiresponse = requests.get(
         "https://api.themoviedb.org/3/discover/" + content_type + "?api_key=3af4a550e843ce38440160234f2569ed&language=" + language2 +
@@ -78,13 +93,14 @@ else:
             "wb")
         file.write(response.content)
         file.close()
+    savetocsv(result_list)
 
-apiresponse = requests.get(
+apiresponse_trending = requests.get(
         "https://api.themoviedb.org/3/trending/"+content_type+"/day?api_key=3af4a550e843ce38440160234f2569ed")
 
-response_to_json = apiresponse.json()
+response_to_json_trending = apiresponse_trending.json()
 
-result_list = response_to_json["results"]
+result_list = response_to_json_trending["results"]
 
 act = list()
 
@@ -99,3 +115,12 @@ for i in range(10):
             "wb")
     file.write(response.content)
     file.close()
+savetocsv(result_list)
+'''
+Finally a mapping has to be done for individual buttons. The mapping will be on a csv file where we have a column for button id and a column for the movie id.
+Another column for content type since API doesnt by itself differentiates between a tv or movie.
+If an image button is pressed, then the information is passed to the moviedetails.py and it reads the tmdb id for that movie and then displays the details
+
+'''
+
+
