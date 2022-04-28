@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
+import pandas as pd
+
 
 import requests
 
@@ -11,6 +13,19 @@ def index(request):
 def add(request):
     n = nana()
     return render(request, "searchhtml.html", {"Name" : n[0], "UserScore" : n[1]})
+
+def lists(request):
+    rows,c, lenth = tata()
+    x = int(0)
+    y = int(0)
+    return render(request, "layerlists.html", {"rows" : rows, "c" : c, "lenth" : lenth})
+
+def reclists(request):
+    rows,c, lenth = tata1()
+    x = int(0)
+    y = int(0)
+    return render(request, "rec_lists.html", {"rows" : rows, "c" : c, "lenth" : lenth})
+
 
 def nana():
     import requests
@@ -48,3 +63,28 @@ def nana():
     print(name, pop, scn)
     return st
 
+def tata():
+    df = pd.read_csv("E:\\Book1.csv")
+    z = 0
+    a = list()
+    b = list()
+    c = list()
+    for index, row in df.iterrows():
+        b = [row['imdb'], row['name'], row['genre'], row['stream'], row['duration'], row['year'], row['rating']]
+        a.append(b)
+    lenth = len(a)
+
+    return a,c, lenth
+
+def tata1():
+    df = pd.read_csv("E:\\Book2.csv")
+    z = 0
+    a = list()
+    b = list()
+    c = list()
+    for index, row in df.iterrows():
+        b = [row['id'], row['name'], row['rating'], row['year'], row['overview'], row['genre'], row['type']]
+        a.append(b)
+    lenth = len(a)
+
+    return a,c, lenth

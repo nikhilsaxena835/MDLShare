@@ -8,6 +8,7 @@ l = y["results"]
 
 act = list()
 
+
 for i in range(10):
 
     act.append(l[i])

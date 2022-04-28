@@ -1,7 +1,7 @@
 body
 {
    background-color: #000000;
-   background-image: url('images/index_bkgrnd.png');
+   background-image: url('D:\mdl\home\index_bkgrnd.png');
    color: #000000;
    font-family: Arial;
    font-weight: normal;
@@ -111,7 +111,7 @@ input:focus, textarea:focus, select:focus
    border: 0px groove #000000;
    border-radius: 0px;
    background-color: transparent;
-   background-image: url('images/index_Table2_bkgrnd.png');
+   background-image: url('D:\mdl\home\index_Table2_bkgrnd.png');
    background-repeat: repeat;
    background-position: left top;
    border-collapse: separate;
@@ -276,7 +276,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: transparent;
-   background-image: url('images/im1.jpg');
+   background-image: url('D:\mdl\home\im1.jpg');
    background-repeat: repeat;
    background-position: left top;
    background-size: cover;
@@ -427,7 +427,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/im2.jpg');
+   background-image: url('D:\mdl\home\im2.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -447,7 +447,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/im3.jpg');
+   background-image: url('D:\mdl\home\im3.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -467,7 +467,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/im4.jpg');
+   background-image: url('D:\mdl\home\im4.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -487,7 +487,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/im5.jpg');
+   background-image: url('D:\mdl\home\im5.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -507,7 +507,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t6.jpg');
+   background-image: url('D:\mdl\home\t6.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -527,7 +527,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t7.jpg');
+   background-image: url('D:\mdl\home\t7.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -547,7 +547,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t8.jpg');
+   background-image: url('D:\mdl\home\t8.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -567,7 +567,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t9.jpg');
+   background-image: url('D:\mdl\home\t9.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -587,7 +587,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t10.jpg');
+   background-image: url('D:\mdl\home\t10.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1066,7 +1066,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/im6.jpg');
+   background-image: url('D:\mdl\home\im6.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1086,7 +1086,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/im7.jpg');
+   background-image: url('D:\mdl\home\im7.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1106,7 +1106,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/im8.jpg');
+   background-image: url('D:\mdl\home\im8.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1126,7 +1126,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/im9.jpg');
+   background-image: url('D:\mdl\home\im9.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1146,7 +1146,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/im10.jpg');
+   background-image: url('D:\mdl\home\im10.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1166,7 +1166,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t1.jpg');
+   background-image: url('D:\mdl\home\t1.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1186,7 +1186,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t2.jpg');
+   background-image: url('D:\mdl\home\t2.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1206,7 +1206,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t3.jpg');
+   background-image: url('D:\mdl\home\t3.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1226,7 +1226,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t4.jpg');
+   background-image: url('D:\mdl\home\t4.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
@@ -1246,7 +1246,7 @@ input:focus, textarea:focus, select:focus
    border: 1px solid #2E6DA4;
    border-radius: 4px;
    background-color: #3370B7;
-   background-image: url('images/t5.jpg');
+   background-image: url('D:\mdl\home\t5.jpg');
    color: #FFFFFF;
    font-family: Arial;
    font-weight: normal;
