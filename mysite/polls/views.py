@@ -4,6 +4,8 @@ from django.template import loader
 import pandas as pd
 
 
+from . import movie_recommendation, moviedetails
+
 
 import requests
 
@@ -27,6 +29,9 @@ def reclists(request):
     y = int(0)
     return render(request, "rec_lists.html", {"rows" : rows, "c" : c, "lenth" : lenth})
 
+def getdetails(request):
+    name, strgenre, strprod, overview, vote = moviedetails.movie()
+    return render(request, "movie_details.html", {"Name" : name, "Genre" : strgenre, "Production" : strprod, "Overview" : overview, "Vote" : vote})
 
 def nana():
     import requests
@@ -79,6 +84,7 @@ def tata():
     return a,c, lenth
 
 def tata1():
+    movie_recommendation.save_images()
     df = pd.read_csv("E:\\Book2.csv")
     z = 0
     a = list()

@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('searchhtml', views.add, name='add'),
     path('lists', views.lists, name = 'lists'),
-    path('rec_lists', views.reclists, name = 'reclists')
+    path('rec_lists', views.reclists, name = 'reclists'),
+    path('movie_details', views.getdetails, name = 'getdetails')
 ]
 urlpatterns += staticfiles_urlpatterns()
