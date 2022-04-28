@@ -5,7 +5,7 @@
 <title>Untitled Page</title>
 <meta name="generator" content="WYSIWYG Web Builder 17 Trial Version - https://www.wysiwygwebbuilder.com">
     {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'polls/lists.css' %}">
+<link rel="stylesheet" type="text/css" href="static/css/lists.css">
     <link rel="stylesheet" type="text/css" href="static/css/new_web_3.css">
 </head>
 <body>
@@ -52,7 +52,7 @@
 <p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
 <td class="cell1"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Overview</span></p>
 <p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
-<td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">genre</span></p>
+<td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Genre</span></p>
 <p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
     <td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Type</span></p>
     <td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Type</span></p>
@@ -84,11 +84,11 @@
 </td>
 <td class="cell1"><p style="font-size:13px;line-height:16px;">&nbsp;<span style="background-color:#1F497D;font-family:MS Sans Serif;font-size:19px;line-height:24px;color:#E5E2D2;">{{ r.0 }}</span></p></td>
     <td class="cell1"><p>&nbsp;{{ r.1 }}</p></td>
-<td class="cell1"><p>&nbsp;{{r.6}}</p></td>
 <td class="cell1"><p>&nbsp;{{r.2}}</p></td>
-<td class="cell1"><p>&nbsp;{{r.4}}</p></td>
 <td class="cell1"><p>&nbsp;{{r.3}}</p></td>
-    <td class="cell1"><p>&nbsp;{{r.5}}</p></td>
+<td class="cell1"><p>&nbsp;{{r.4}}</p></td>
+<td class="cell1"><p>&nbsp;{{r.5}}</p></td>
+    <td class="cell1"><p>&nbsp;{{r.6}}</p></td>
 
 </tr>
 {% endfor %}

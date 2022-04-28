@@ -4,6 +4,7 @@ from django.template import loader
 import pandas as pd
 
 
+
 import requests
 
 def index(request):
@@ -64,6 +65,7 @@ def nana():
     return st
 
 def tata():
+
     df = pd.read_csv("E:\\Book1.csv")
     z = 0
     a = list()
