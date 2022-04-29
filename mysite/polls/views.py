@@ -23,7 +23,7 @@ def lists(request):
     rows,c, lenth = tata()
     x = int(0)
     y = int(0)
-    return render(request, "layerlists.html", {"rows" : rows, "c" : c, "lenth" : lenth})
+    return render(request, "lists.html", {"rows" : rows})
 
 def reclists(request):
     rows,c, lenth = tata1()
@@ -74,9 +74,7 @@ def nana():
 def tata():
 
     df = pd.read_csv("E:\\Book1.csv")
-    z = 0
     a = list()
-    b = list()
     c = list()
     for index, row in df.iterrows():
         b = [row['imdb'], row['name'], row['genre'], row['stream'], row['duration'], row['year'], row['rating']]

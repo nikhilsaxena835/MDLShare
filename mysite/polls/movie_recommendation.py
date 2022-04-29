@@ -1,14 +1,5 @@
-import os
-
-import requests
 import pandas as pd
-
 import requests
-import math
-
-
-
-
 
 def save_images():
     my_dict = {28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime", 99: "Documentary", 18: "Drama",
@@ -69,7 +60,7 @@ def save_images():
                     key.append(temp1)
 
                 temp = [newid, newname, newrating, key, overview, newyear, content_type]
-                data = {'id' : newid, 'name' : newname, 'rating' : newrating, 'year' : newyear, 'overview' : overview, 'genre' : key, 'type' : content_type}
+                data = {'id' : newid, 'name' : newname, 'rating' : newrating, 'year' : newyear, 'overview' : overview, 'genre' : [key], 'type' : content_type}
                 df1 = pd.DataFrame(data)
 
                 dforiginal = dforiginal.append(df1)
