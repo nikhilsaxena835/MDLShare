@@ -10,8 +10,10 @@ from . import movie_recommendation, moviedetails
 import requests
 
 def index(request):
-  template = loader.get_template('first.html')
-  return HttpResponse(template.render())
+    if(request.GET.get('Action')):
+        print("Button 10 pressed")
+    template = loader.get_template('first.html')
+    return HttpResponse(template.render())
 
 def add(request):
     n = nana()
