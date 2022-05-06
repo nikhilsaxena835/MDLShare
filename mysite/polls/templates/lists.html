@@ -33,7 +33,10 @@
 <hr id="Line4" style="position:absolute;left:22px;top:857px;width:1331px;z-index:17;">
 <div id="wb_Line5" style="position:absolute;left:5px;top:98px;width:3px;height:755px;opacity:0.20;z-index:18;">
 <img src="images/img0007.png" id="Line5" alt="" width="-3" height="755"></div>
+<a href = "{% url 'reclists'  %}">
 <input type="submit" id="Button1" name="" value="Recommend Me" style="position:absolute;left:379px;top:159px;width:173px;height:55px;z-index:19;">
+</a>
+
 <input type="submit" id="Button2" name="" value="My Watchlist" style="position:absolute;left:923px;top:159px;width:143px;height:55px;z-index:20;">
 <img src="images/img0012.png" id="Banner1" alt="MDL" style="border-width:0;position:absolute;left:22px;top:8px;width:138px;height:78px;z-index:21;" width="138" height="78">
 
@@ -52,9 +55,7 @@
 <p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
 <td class="cell1"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Duration</span></p>
 <p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
-<td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Available on</span></p>
-<p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
-    <td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Released on</span></p>
+<td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Released on</span></p>
 <p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
 </tr>
 
@@ -82,21 +83,14 @@
 </div>
 </td>
 <td class="cell1"><p style="font-size:13px;line-height:16px;">&nbsp;<span style="background-color:#1F497D;font-family:MS Sans Serif;font-size:19px;line-height:24px;color:#E5E2D2;">{{ r.0 }}</span></p></td>
-    <td class="cell1"><p>&nbsp;{{ r.1 }}</p></td>
-<td class="cell1"><p>&nbsp;{{r.6}}</p></td>
+<td class="cell1"><p>&nbsp;{{ r.1 }}</p></td>
+<td class="cell1"><p>&nbsp;{{r.5}}</p></td>
 <td class="cell1"><p>&nbsp;{{r.2}}</p></td>
-<td class="cell1"><p>&nbsp;{{r.4}}</p></td>
 <td class="cell1"><p>&nbsp;{{r.3}}</p></td>
-    <td class="cell1"><p>&nbsp;{{r.5}}</p></td>
+<td class="cell1"><p>&nbsp;{{r.4}}</p></td>
 
 </tr>
 {% endfor %}
-
-
-
-
-
-
 
 </table>
 

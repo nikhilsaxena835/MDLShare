@@ -1,17 +1,19 @@
 import requests
 
 def movie():
-    r = requests.get("https://api.themoviedb.org/3/movie/300?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
+    r = requests.get("https://api.themoviedb.org/3/movie/4953?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
     nr = requests.get(
-        "https://api.themoviedb.org/3/movie/550/credits?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
+        "https://api.themoviedb.org/3/movie/4953/credits?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
 
     l = r.json()
     z = nr.json()
-
+    dbid = 4953
     name = l['original_title']
     genre = l['genres']
     strgenre = ""
     strprod = ""
+    runtime = l['runtime']
+    release_date = l['release_date']
 
     for i in genre:
         temp = i
@@ -48,6 +50,7 @@ def movie():
     file.write(response1.content)
     file.close()
 
-    return name, strgenre, strprod, overview, vote
+    return name, strgenre, strprod, overview, vote, dbid, runtime, release_date, l['poster_path']
 
 
+movie()

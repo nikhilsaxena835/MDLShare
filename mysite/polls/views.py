@@ -6,8 +6,11 @@ import pandas as pd
 
 from . import movie_recommendation, moviedetails
 
-
+content = 'movie'
 import requests
+
+content_obj = list()
+
 
 def index(request):
     if(request.GET.get('Action')):
@@ -15,25 +18,40 @@ def index(request):
     template = loader.get_template('first.html')
     return HttpResponse(template.render())
 
+
 def add(request):
     n = nana()
     return render(request, "searchhtml.html", {"Name" : n[0], "UserScore" : n[1]})
 
+
 def lists(request):
-    rows,c, lenth = tata()
-    x = int(0)
-    y = int(0)
-    return render(request, "lists.html", {"rows" : rows})
+    rows = fetch_watchlist()
+    return render(request, "lists.html", {"rows": rows})
+
 
 def reclists(request):
-    rows,c, lenth = tata1()
-    x = int(0)
-    y = int(0)
-    return render(request, "rec_lists.html", {"rows" : rows, "c" : c, "lenth" : lenth})
+    rows = fetch_recommendation()
+    return render(request, "rec_lists.html", {"rows": rows})
+
 
 def getdetails(request):
-    name, strgenre, strprod, overview, vote = moviedetails.movie()
+    name, strgenre, strprod, overview, vote, dbid, runtime, release_date, sc = moviedetails.movie()
+    if (request.GET.get('watchlist')):
+        data = [dbid, name, strgenre, runtime, release_date, vote, content]
+        df = pd.DataFrame([data], columns=['imdb', 'name', 'genre', 'duration', 'year', 'rating', 'type'])
+        df.to_csv("E:\\Book1.csv", mode = 'a', header = False, index = False)
+        response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
+        tempnew = str(dbid)
+        file = open(
+            "C:\\Users\\nikhil\\Desktop\\mdl\\MDL\\mysite\\polls\\static\\images\\watchlist\\im" + tempnew + ".jpg",
+            "wb")
+        file.write(response.content)
+        file.close()
+
     return render(request, "movie_details.html", {"Name" : name, "Genre" : strgenre, "Production" : strprod, "Overview" : overview, "Vote" : vote})
+
+# originally was intended for search bar, this function is obsolete for now
+
 
 def nana():
     import requests
@@ -71,28 +89,24 @@ def nana():
     print(name, pop, scn)
     return st
 
-def tata():
+
+def fetch_watchlist():
 
     df = pd.read_csv("E:\\Book1.csv")
-    a = list()
-    c = list()
+    rows_as_list = list()
     for index, row in df.iterrows():
-        b = [row['imdb'], row['name'], row['genre'], row['stream'], row['duration'], row['year'], row['rating']]
-        a.append(b)
-    lenth = len(a)
+        temp = [row['imdb'], row['name'], row['genre'], row['duration'], row['year'], row['rating']]
+        rows_as_list.append(temp)
 
-    return a,c, lenth
+    return rows_as_list
 
-def tata1():
+
+def fetch_recommendation():
     movie_recommendation.save_images()
     df = pd.read_csv("E:\\Book2.csv")
-    z = 0
-    a = list()
-    b = list()
-    c = list()
+    rows_as_list = list()
     for index, row in df.iterrows():
-        b = [row['id'], row['name'], row['rating'], row['year'], row['overview'], row['genre'], row['type']]
-        a.append(b)
-    lenth = len(a)
+        temp = [row['id'], row['name'], row['rating'], row['year'], row['overview'], row['genre'], row['type']]
+        rows_as_list.append(temp)
 
-    return a,c, lenth
+    return rows_as_list

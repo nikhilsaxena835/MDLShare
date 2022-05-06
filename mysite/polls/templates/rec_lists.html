@@ -2,14 +2,20 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Page</title>
-<meta name="generator" content="WYSIWYG Web Builder 17 Trial Version - https://www.wysiwygwebbuilder.com">
+<title>Recommendation Window</title>
+
+
     {% load static %}
-<link rel="stylesheet" type="text/css" href="static/css/lists.css">
-    <link rel="stylesheet" type="text/css" href="static/css/new_web_3.css">
+<link rel="stylesheet" type="text/css" href="static/css/lists.css"><link rel="stylesheet" type="text/css" href="static/css/new_web_3.css">
 </head>
+
+
 <body>
-<a href="https://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb17.png" alt="WYSIWYG Web Builder" style="position:absolute;left:440px;top:970px;margin: 0;border-width:0;z-index:250" width="16" height="16"></a>
+
+
+
+
+
 <table style="position:absolute;left:238px;top:8px;width:1096px;height:78px;z-index:13;" id="Table1">
 <tr>
 <td class="cell0"><a id="Button24" href="./index.html" style="display:block;width: 100%;;height:74px;z-index:0;">Home</a>
@@ -24,6 +30,8 @@
 </td>
 </tr>
 </table>
+
+
 <div id="wb_Image1" style="position:absolute;left:22px;top:8px;width:137px;height:78px;z-index:14;">
 <img src="images/1.PNG" id="Image1" alt=""></div>
 <div id="wb_Line2" style="position:absolute;left:178px;top:98px;width:3px;height:755px;opacity:0.20;z-index:15;">
@@ -34,8 +42,12 @@
 <div id="wb_Line5" style="position:absolute;left:5px;top:98px;width:3px;height:755px;opacity:0.20;z-index:18;">
 <img src="images/img0007.png" id="Line5" alt="" width="-3" height="755"></div>
 <input type="submit" id="Button1" name="" value="Recommend Me" style="position:absolute;left:379px;top:159px;width:173px;height:55px;z-index:19;">
-<input type="submit" id="Button2" name="" value="My Watchlist" style="position:absolute;left:923px;top:159px;width:143px;height:55px;z-index:20;">
+
+    <a href = "{% url 'lists'  %}">
+    <input type="submit" id="Button2"
+    name="" value="My Watchlist" style="position:absolute;left:923px;top:159px;width:143px;height:55px;z-index:20;">
 <img src="images/img0012.png" id="Banner1" alt="MDL" style="border-width:0;position:absolute;left:22px;top:8px;width:138px;height:78px;z-index:21;" width="138" height="78">
+    </a>
 
 
 
@@ -54,8 +66,7 @@
 <p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
 <td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Genre</span></p>
 <p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
-    <td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Type</span></p>
-    <td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Type</span></p>
+<td class="cell3"><p style="font-family:MS Sans Serif;font-size:27px;line-height:32px;"><span style="font-family:Arial;font-size:13px;line-height:16px;">&nbsp;</span><span style="font-family:Arial;color:#E5E2D2;">Type</span></p>
 <p style="font-size:13px;line-height:16px;">&nbsp;</p></td>
 </tr>
 
@@ -79,7 +90,7 @@
 <tr>
 
 <td class="cell4"><div id="wb_Image2" style="display:inline-block;width:100%;height:auto;z-index:10;">
-<img src="images/im0.jpg" id="Image2" alt="" width="190" height="286">
+<img src="D:/mdl/home/rec{{ r.0 }}" id="Image2" alt="" width="190" height="286">
 </div>
 </td>
 <td class="cell1"><p style="font-size:13px;line-height:16px;">&nbsp;<span style="background-color:#1F497D;font-family:MS Sans Serif;font-size:19px;line-height:24px;color:#E5E2D2;">{{ r.0 }}</span></p></td>
@@ -100,6 +111,8 @@
 
 
 </table>
+
+
 
 </body>
 </html>

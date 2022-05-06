@@ -2,14 +2,17 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Page</title>
-<meta name="generator" content="WYSIWYG Web Builder 17 Trial Version - https://www.wysiwygwebbuilder.com">
-<link href="static/css/new_web_3.css" rel="stylesheet">
-<link href="static/css/movie_details.css" rel="stylesheet">
+<title>Movie Details</title>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="static/css/new_web_3.css">
+<link rel="stylesheet" type="text/css" href="static/css/movie_details.css">
+
 </head>
 <body>
-<a href="https://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb17.png" alt="WYSIWYG Web Builder" style="position:absolute;left:441px;top:967px;margin: 0;border-width:0;z-index:250" width="88" height="31"></a>
-<input type="submit" id="Button6" name="" value="Add to watchlist" style="position:absolute;left:874px;top:488px;width:116px;height:25px;z-index:11;">
+<form action = '#' method="get">
+<input type="submit" id="Button6" name="watchlist" value="Add to watchlist" style="position:absolute;left:874px;top:488px;width:116px;height:25px;z-index:11;">
+</form>
 <div id="wb_Image1" style="position:absolute;left:24px;top:9px;width:137px;height:78px;z-index:12;">
 <img src="images/1.PNG" id="Image1" alt=""></div>
 <a id="Button22" href="./lists.html" style="position:absolute;left:449px;top:10px;width:218px;height:74px;z-index:13;">Lists</a>
@@ -44,16 +47,17 @@
 
 <div id="wb_Text8" style="position:absolute;left:45px;top:666px;width:250px;height:30px;z-index:23;">
 <span style="color:#E5B9B7;font-family:Arial;font-size:27px;"><strong>Cast</strong></span></div>
+
 <div id="wb_Image2" style="position:absolute;left:55px;top:132px;width:219px;height:329px;z-index:24;">
-<img src="images/poster.jpg" id="Image2" alt=""></div>
+<img src="static/images/details/crb.jpg" id="Image2" alt=""></div>
 <div id="wb_Image3" style="position:absolute;left:101px;top:732px;width:148px;height:222px;z-index:25;">
-<img src="images/cr0.jpg" id="Image3" alt="" width="148" height="222"></div>
+<img src="static/images/details/cr0.jpg" id="Image3" alt="" width="148" height="222"></div>
 <div id="wb_Image4" style="position:absolute;left:370px;top:732px;width:147px;height:222px;z-index:26;">
-<img src="images/cr1.jpg" id="Image4" alt="" width="147" height="221"></div>
+<img src="static/images/details/cr1.jpg" id="Image4" alt="" width="147" height="221"></div>
 <div id="wb_Image5" style="position:absolute;left:639px;top:732px;width:146px;height:222px;z-index:27;">
-<img src="images/cr2.jpg" id="Image5" alt="" width="146" height="219"></div>
+<img src="static/images/details/cr2.jpg" id="Image5" alt="" width="146" height="219"></div>
 <div id="wb_Image6" style="position:absolute;left:918px;top:732px;width:156px;height:222px;z-index:28;">
-<img src="images/cr3.jpg" id="Image6" alt="" width="156" height="234"></div>
+<img src="static/images/details/cr3.jpg" id="Image6" alt="" width="156" height="234"></div>
 <div id="wb_Text9" style="position:absolute;left:50px;top:508px;width:250px;height:30px;z-index:29;">
 <span style="color:#E5B9B7;font-family:Arial;font-size:27px;"><strong>Overview</strong></span></div>
 <div id="wb_Text10" style="position:absolute;left:389px;top:449px;width:250px;height:30px;z-index:30;">
