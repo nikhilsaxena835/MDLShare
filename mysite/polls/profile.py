@@ -37,11 +37,21 @@ def generate_charts():
     Thriller = 0
     War = 0
     Western = 0
+    dramar = 0
 
-    for i in df['genre']:
-        finder = i
+    for index, row in df.iterrows():
+        print(type(row))
+        print(row)
+
+
+# Pari boy upar wali line aur niche wala pehla if dekho ... aise karne ka hai sabki rating find ... end mein divide bhi karna hai toh wo uske counter
+# variable means jese ki Drama hai toh uska total aara hai 53.59999 toh usko Drama variable se divide krne ka .. isse uski rating aa jaegi. Simple it was kya yrrr
+# ab aisa hi sabka kardo .. mein jara hu dusri taraf firse hue hue hue
+        finder = row['genre']
         if finder.find('Drama') != -1:
             Drama = Drama + 1
+            #ye niche wali line
+            dramar = dramar + row['rating']
 
         if finder.find('Action') != -1:
             Action = Action + 1
@@ -97,11 +107,12 @@ def generate_charts():
         if finder.find('Western') != -1:
             Western = Western + 1
 
-
     x = np.array(['Drama', 'Action', 'Adventure', 'Animation', 'Comedy', 'Crime', 'Documentary', 'History', 'Horror', 'Family', 'Fantasy', 'Mystery', 'Music',
                   'Romance', 'Science Fiction', 'TV Movie', 'Thriller', 'War', 'Western'])
     y = np.array([Drama, Action, Adventure, Animation, Comedy, Crime, Documentary, History, Horror, Family, Fantasy, Mystery,
                   Music, Romance, ScienceFiction, TVMovie, Thriller, War, Western])
+
+    print(dramar)
     plt.bar(x, y)
     plt.show()
 
