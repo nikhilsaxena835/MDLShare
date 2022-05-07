@@ -1,0 +1,166 @@
+<?php
+$database = './usersdb.php';
+$success_page = '';
+$error_message = "";
+if (!file_exists($database))
+{
+   die('User database not found!');
+   exit;
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_name']) && $_POST['form_name'] == 'signupform')
+{
+   $newusername = $_POST['username'];
+   $newemail = $_POST['email'];
+   $newpassword = $_POST['password'];
+   $confirmpassword = $_POST['confirmpassword'];
+   $newfullname = $_POST['fullname'];
+   $code = 'NA';
+   if ($newpassword != $confirmpassword)
+   {
+      $error_message = 'Password and Confirm Password are not the same!';
+   }
+   else
+   if (!preg_match("/^[A-Za-z0-9-_!@$]{1,50}$/", $newusername))
+   {
+      $error_message = 'Username is not valid, please check and try again!';
+   }
+   else
+   if (!preg_match("/^[A-Za-z0-9-_!@$]{1,50}$/", $newpassword))
+   {
+      $error_message = 'Password is not valid, please check and try again!';
+   }
+   else
+   if (!preg_match("/^[A-Za-z0-9-_!@$]{1,50}$/", $newfullname))
+   {
+      $error_message = 'Fullname is not valid, please check and try again!';
+   }
+   else
+   if (!preg_match("/^.+@.+\..+$/", $newemail))
+   {
+      $error_message = 'Email is not a valid email address. Please check and try again.';
+   }
+   $items = file($database, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+   foreach($items as $line)
+   {
+      list($username, $password, $email, $fullname) = explode('|', trim($line));
+      if ($newusername == $username)
+      {
+         $error_message = 'Username already used. Please select another username.';
+         break;
+      }
+   }
+   if (empty($error_message))
+   {
+      $file = fopen($database, 'a');
+      fwrite($file, $newusername);
+      fwrite($file, '|');
+      fwrite($file, md5($newpassword));
+      fwrite($file, '|');
+      fwrite($file, $newemail);
+      fwrite($file, '|');
+      fwrite($file, $newfullname);
+      fwrite($file, '|1|');
+      fwrite($file, $code);
+      fwrite($file, "\r\n");
+      fclose($file);
+      $subject = 'Your new account';
+      $message = 'A new account has been setup.';
+      $message .= "\r\nUsername: ";
+      $message .= $newusername;
+      $message .= "\r\nPassword: ";
+      $message .= $newpassword;
+      $message .= "\r\n";
+      $header  = "From: webmaster@yourwebsite.com"."\r\n";
+      $header .= "Reply-To: webmaster@yourwebsite.com"."\r\n";
+      $header .= "MIME-Version: 1.0"."\r\n";
+      $header .= "Content-Type: text/plain; charset=utf-8"."\r\n";
+      $header .= "Content-Transfer-Encoding: 8bit"."\r\n";
+      $header .= "X-Mailer: PHP v".phpversion();
+      mail($newemail, $subject, $message, $header);
+      header('Location: '.$success_page);
+      exit;
+   }
+}
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 17 Trial Version - https://www.wysiwygwebbuilder.com">
+<link href="new_web_3.css" rel="stylesheet">
+<link href="register.css" rel="stylesheet">
+</head>
+<body>
+<a href="https://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb17.png" alt="WYSIWYG Web Builder" style="position:absolute;left:450px;top:1073px;margin: 0;border-width:0;z-index:250" width="16" height="16"></a>
+<table style="position:absolute;left:242px;top:8px;width:1096px;height:78px;z-index:11;" id="Table1">
+<tr>
+<td class="cell0"><input type="button" id="Button24" name="" value="Home" style="display:block;width: 100%;;height:74px;z-index:0;">
+</td>
+<td class="cell1"><input type="button" id="Button22" name="" value="Lists" style="display:block;width: 100%;;height:74px;z-index:1;">
+</td>
+<td class="cell2"><input type="button" id="Button23" name="" value="Profile" style="display:block;width: 100%;;height:74px;z-index:2;">
+</td>
+<td class="cell3"><input type="button" id="Button20" name="" value="About Us" style="display:block;width: 100%;;height:74px;z-index:3;">
+</td>
+<td class="cell4"><input type="button" id="Button21" name="" value="Log-in" style="display:block;width: 100%;;height:74px;z-index:4;">
+</td>
+</tr>
+</table>
+<div id="wb_Image1" style="position:absolute;left:26px;top:8px;width:137px;height:78px;z-index:12;">
+<img src="images/1.PNG" id="Image1" alt=""></div>
+<div id="wb_Line3" style="position:absolute;left:1353px;top:99px;width:3px;height:740px;opacity:0.20;z-index:13;">
+<img src="images/img0020.png" id="Line3" alt="" width="-3" height="740"></div>
+<hr id="Line4" style="position:absolute;left:26px;top:857px;width:1331px;z-index:14;">
+<div id="wb_Line5" style="position:absolute;left:9px;top:98px;width:3px;height:755px;opacity:0.20;z-index:15;">
+<img src="images/img0021.png" id="Line5" alt="" width="-3" height="755"></div>
+<div id="wb_Signup1" style="position:absolute;left:548px;top:116px;width:286px;height:396px;z-index:16;">
+<form name="signupform" method="post" accept-charset="UTF-8" action="<?php echo basename(__FILE__); ?>" id="signupform">
+<input type="hidden" name="form_name" value="signupform">
+<table id="Signup1">
+<tr>
+   <td class="header">Sign up for a new account</td>
+</tr>
+<tr>
+   <td class="label"><label for="fullname">Full Name</label></td>
+</tr>
+<tr>
+   <td class="row"><input class="input" name="fullname" type="text" id="fullname"></td>
+</tr>
+<tr>
+   <td class="label"><label for="username">User Name</label></td>
+</tr>
+<tr>
+   <td class="row"><input class="input" name="username" type="text" id="username"></td>
+</tr>
+<tr>
+   <td class="label"><label for="password">Password</label></td>
+</tr>
+<tr>
+   <td class="row"><input class="input" name="password" type="password" id="password"></td>
+</tr>
+<tr>
+   <td class="label"><label for="confirmpassword">Confirm Password</label></td>
+</tr>
+<tr>
+   <td class="row"><input class="input" name="confirmpassword" type="password" id="confirmpassword"></td>
+</tr>
+<tr>
+   <td class="label"><label for="email">E-mail</label></td>
+</tr>
+<tr>
+   <td class="row"><input class="input" name="email" type="text" id="email"></td>
+</tr>
+<tr>
+   <td><?php echo $error_message; ?></td>
+</tr>
+<tr>
+   <td style="text-align:center;vertical-align:bottom"><input class="button" type="submit" name="signup" value="Create User" id="signup"></td>
+</tr>
+</table>
+</form>
+</div>
+<a id="Button1" href="./successfully-registered.html" style="position:absolute;left:640px;top:475px;width:103px;height:25px;z-index:17;">Submit</a>
+<img src="images/img0023.png" id="Banner1" alt="MDL" style="border-width:0;position:absolute;left:26px;top:8px;width:138px;height:78px;z-index:18;" width="138" height="78">
+</body>
+</html>

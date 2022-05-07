@@ -39,14 +39,14 @@ def movie():
       sp.append(temp["name"])
       response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
       tempnew = str(i)
-      file = open("D:\\mdl\\details\\cr" + tempnew + ".jpg", "wb")
+      file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\details\\cr" + tempnew + ".jpg", "wb")
       file.write(response.content)
       file.close()
 
 
     scn = str(l["poster_path"])
     response1 = requests.get("https://image.tmdb.org/t/p/w185/" + scn)
-    file = open("D:\\mdl\\details\\crb.jpg","wb")
+    file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\details\\crb.jpg","wb")
     file.write(response1.content)
     file.close()
 

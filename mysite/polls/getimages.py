@@ -22,7 +22,7 @@ def savetocsv(result_list, content_type):
         df3 = df3.append({'tmdb': temp["id"], 'type' : content_type}, ignore_index=True)
         print(df3)
 
-    df3.to_csv("D:\\mdl\\home.csv", mode = 'a', header = False, index = False)
+    df3.to_csv("D:\\mdl\\MDL\\home.csv", mode = 'w', header = False, index = False)
 
 
 def images():
@@ -62,7 +62,7 @@ def images():
               sc = str(temp["poster_path"])
               response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
               tempnew = str(i)
-              file = open("D:\\mdl\\home\\im" + tempnew + ".jpg","wb")
+              file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\home\\im" + tempnew + ".jpg","wb")
               file.write(response.content)
               file.close()
 
@@ -84,7 +84,7 @@ def images():
             sc = str(temp["poster_path"])
             response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
             tempnew = str(i)
-            file = open("D:\\mdl\\home\\im" + tempnew + ".jpg","wb")
+            file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\home\\im" + tempnew + ".jpg","wb")
             file.write(response.content)
             file.close()
         savetocsv(result_list, content_type)
@@ -105,7 +105,7 @@ def images():
         response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
         tempnew = str(i)
         file = open(
-            "D:\\mdl\\home\\t" + tempnew + ".jpg",
+            "D:\\mdl\\MDL\\Book1.csv\\home\\t" + tempnew + ".jpg",
             "wb")
         file.write(response.content)
         file.close()

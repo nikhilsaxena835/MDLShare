@@ -11,7 +11,7 @@ def save_images():
     posterlist = list()
     dforiginal = pd.DataFrame()
     ids = list()
-    df = pd.read_csv("E:\\Book1.csv")
+    df = pd.read_csv("D:\\mdl\\MDL\\Book1.csv")
     temp = list()
     biglist = list()
     checker = list()
@@ -67,11 +67,11 @@ def save_images():
                 biglist.append(temp)
                 tempnew = str(newid)
                 response = requests.get("https://image.tmdb.org/t/p/w185/" + newposter)
-                file = open("D:\\mdl\\home\\rec" + tempnew + ".jpg", "wb")
+                file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\home\\rec" + tempnew + ".jpg", "wb")
                 file.write(response.content)
                 file.close()
 
-    dforiginal.to_csv("E:\\Book2.csv", mode='w', index=False, header=headerlist)
+    dforiginal.to_csv("D:\\mdl\\MDL\\Book2.csv", mode='w', index=False, header=headerlist)
 
 
 

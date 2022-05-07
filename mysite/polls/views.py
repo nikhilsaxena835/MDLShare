@@ -7,6 +7,7 @@ import pandas as pd
 from . import movie_recommendation, moviedetails
 
 content = 'movie'
+loggedin = 'false'
 import requests
 
 content_obj = list()
@@ -43,7 +44,7 @@ def getdetails(request):
         response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
         tempnew = str(dbid)
         file = open(
-            "C:\\Users\\nikhil\\Desktop\\mdl\\MDL\\mysite\\polls\\static\\images\\watchlist\\im" + tempnew + ".jpg",
+            "D:\\mdl\\MDL\\mysite\\polls\\static\\images\\watchlist\\im" + tempnew + ".jpg",
             "wb")
         file.write(response.content)
         file.close()
@@ -73,14 +74,14 @@ def nana():
         sp.append(temp["name"])
         response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
         tempnew = str(i)
-        file = open("D:\\mdl\\details\\cr" + tempnew + ".jpg", "wb")
+        file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\details\\cr" + tempnew + ".jpg", "wb")
         file.write(response.content)
         file.close()
 
     name = l["original_title"]
     scn = str(l["poster_path"])
     response1 = requests.get("https://image.tmdb.org/t/p/w185/" + scn)
-    file = open("D:\\mdl\\details\\crb.jpg", "wb")
+    file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\details\\crb.jpg", "wb")
     file.write(response1.content)
     file.close()
 
@@ -92,7 +93,7 @@ def nana():
 
 def fetch_watchlist():
 
-    df = pd.read_csv("E:\\Book1.csv")
+    df = pd.read_csv("D:\\mdl\\MDL\\Book1.csv")
     rows_as_list = list()
     for index, row in df.iterrows():
         temp = [row['imdb'], row['name'], row['genre'], row['duration'], row['year'], row['rating']]
@@ -103,10 +104,25 @@ def fetch_watchlist():
 
 def fetch_recommendation():
     movie_recommendation.save_images()
-    df = pd.read_csv("E:\\Book2.csv")
+    df = pd.read_csv("D:\\mdl\\MDL\\Book2.csv")
     rows_as_list = list()
     for index, row in df.iterrows():
         temp = [row['id'], row['name'], row['rating'], row['year'], row['overview'], row['genre'], row['type']]
         rows_as_list.append(temp)
 
     return rows_as_list
+
+def login(request):
+    global loggedin
+    userid = request.GET.get('username')
+    passwrd = request.GET.get('password')
+    df = pd.read_csv("D:\\mdl\\MDL\\mysite\\users.csv")
+    df = df.loc[df['userid'] == userid]
+
+    print(df)
+    userpass = df['password'].values
+    if userpass == passwrd:
+        loggedin = 'true'
+        print('You are now logged in')
+        print(loggedin)
+    return render(request, "login.html")
