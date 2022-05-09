@@ -4,7 +4,7 @@ from django.template import loader
 import pandas as pd
 
 
-from . import movie_recommendation, moviedetails
+from . import movie_recommendation, moviedetails, profile
 
 content = 'movie'
 loggedin = 'false'
@@ -112,6 +112,7 @@ def fetch_recommendation():
 
     return rows_as_list
 
+
 def login(request):
     global loggedin
     userid = request.GET.get('username')
@@ -126,3 +127,8 @@ def login(request):
         print('You are now logged in')
         print(loggedin)
     return render(request, "login.html")
+
+
+def profile_page(request):
+    profile.generate_charts()
+    return render(request, "profile.html")

@@ -29,9 +29,11 @@ $(document).ready(function()
 <body>
 <table style="position:absolute;left:234px;top:8px;width:1096px;height:78px;z-index:73;" id="Table1">
 <tr>
-<td class="cell0"><p>&nbsp;</p></td>
-<td class="cell1"><p>&nbsp;</p></td>
-<td class="cell2"><a id="Button23" href="{% url 'lists'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Profile</a>
+<td class="cell0"><a id="Button24" href="{% url 'index'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Home</a>
+</td>
+<td class="cell1"><a id="Button22" href="{% url 'lists'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">Lists</a>
+</td>
+<td class="cell2"><a id="Button23" href="{% url 'profile_page'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Profile</a>
 </td>
 <td class="cell3"><a id="Button20" href="{% url 'lists'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">About Us</a>
 </td>
@@ -179,10 +181,10 @@ $(document).ready(function()
 </td>
 </tr>
 </table>
-<a id="Button22" href="./lists.html" style="position:absolute;left:443px;top:9px;width:218px;height:74px;z-index:78;">Lists</a>
+
 <input type="text" id="Editbox1" style="position:absolute;left:628px;top:162px;width:392px;height:29px;z-index:79;" name="Editbox1" value="" spellcheck="false" placeholder="Search">
 <a id="Button25" href="./movie-details.html" style="position:absolute;left:1054px;top:161px;width:96px;height:41px;z-index:80;">Search</a>
-<a id="Button24" href="./index.html" style="position:absolute;left:236px;top:8px;width:202px;height:75px;z-index:81;">Home</a>
+
 <div id="wb_Text2" style="position:absolute;left:237px;top:817px;width:123px;height:39px;z-index:82;">
 <span style="color:#8FA4BE;font-family:Arial;font-size:21px;"><strong>Trending<br></strong></span></div>
 <div id="wb_Text3" style="position:absolute;left:237px;top:229px;width:123px;height:39px;z-index:83;">
