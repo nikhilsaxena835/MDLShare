@@ -86,24 +86,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['form_name']) && $_POST
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Page</title>
-<meta name="generator" content="WYSIWYG Web Builder 17 Trial Version - https://www.wysiwygwebbuilder.com">
+<title>Create Account</title>
 <link href="new_web_3.css" rel="stylesheet">
 <link href="register.css" rel="stylesheet">
 </head>
 <body>
-<a href="https://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb17.png" alt="WYSIWYG Web Builder" style="position:absolute;left:450px;top:1073px;margin: 0;border-width:0;z-index:250" width="16" height="16"></a>
-<table style="position:absolute;left:242px;top:8px;width:1096px;height:78px;z-index:11;" id="Table1">
+
+<table style="position:absolute;left:234px;top:8px;width:1096px;height:78px;z-index:73;" id="Table1">
 <tr>
-<td class="cell0"><input type="button" id="Button24" name="" value="Home" style="display:block;width: 100%;;height:74px;z-index:0;">
+<td class="cell0"><a id="Button24" href="{% url 'index'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Home</a>
 </td>
-<td class="cell1"><input type="button" id="Button22" name="" value="Lists" style="display:block;width: 100%;;height:74px;z-index:1;">
+<td class="cell1"><a id="Button22" href="{% url 'lists'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">Lists</a>
 </td>
-<td class="cell2"><input type="button" id="Button23" name="" value="Profile" style="display:block;width: 100%;;height:74px;z-index:2;">
+<td class="cell2"><a id="Button23" href="{% url 'profile_page'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Profile</a>
 </td>
-<td class="cell3"><input type="button" id="Button20" name="" value="About Us" style="display:block;width: 100%;;height:74px;z-index:3;">
+<td class="cell3"><a id="Button20" href="{% url 'about'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">About Us</a>
 </td>
-<td class="cell4"><input type="button" id="Button21" name="" value="Log-in" style="display:block;width: 100%;;height:74px;z-index:4;">
+<td class="cell4"><a id="Button21" href="{% url 'login'  %}" style="display:block;width: 100%;;height:74px;z-index:2;">Log-in</a>
 </td>
 </tr>
 </table>

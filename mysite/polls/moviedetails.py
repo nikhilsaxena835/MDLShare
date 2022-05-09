@@ -1,12 +1,13 @@
 import requests
 
-def movie(id):
-    r = requests.get("https://api.themoviedb.org/3/movie/"+str(id)+"?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
+def movie(id, content):
+    r = requests.get("https://api.themoviedb.org/3/"+content+"/"+str(id)+"?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
     nr = requests.get(
         "https://api.themoviedb.org/3/movie/4953/credits?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
 
     l = r.json()
     z = nr.json()
+    print(l)
     dbid = 4953
     name = l['original_title']
     genre = l['genres']

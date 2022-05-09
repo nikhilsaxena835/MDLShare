@@ -15,6 +15,7 @@ urlpatterns = [
     path('login', views.login, name = 'login'),
     path('profile', views.profile_page, name = 'profile_page'),
     path('search', views.search, name = 'search'),
+    path('about', views.about, name = 'about'),
     #path('lists', TemplateView.as_view(template_name='lists.html'))
 ]
 urlpatterns += staticfiles_urlpatterns()

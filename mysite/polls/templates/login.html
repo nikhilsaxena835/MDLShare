@@ -58,17 +58,17 @@ $password = isset($_COOKIE['password']) ? $_COOKIE['password'] : '';
 
 </head>
 <body>
-<table style="position:absolute;left:242px;top:8px;width:1096px;height:78px;z-index:11;" id="Table1">
+<table style="position:absolute;left:234px;top:8px;width:1096px;height:78px;z-index:73;" id="Table1">
 <tr>
-<td class="cell0"><a id="Button24" href="./index.html" style="display:block;width: 100%;;height:74px;z-index:0;">Home</a>
+<td class="cell0"><a id="Button24" href="{% url 'index'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Home</a>
 </td>
-<td class="cell1"><a id="Button22" href="./lists.html" style="display:block;width: 100%;;height:74px;z-index:1;">Lists</a>
+<td class="cell1"><a id="Button22" href="{% url 'lists'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">Lists</a>
 </td>
-<td class="cell2"><a id="Button23" href="./profile.html" style="display:block;width: 100%;;height:74px;z-index:2;">Profile</a>
+<td class="cell2"><a id="Button23" href="{% url 'profile_page'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Profile</a>
 </td>
-<td class="cell3"><a id="Button20" href="./about.html" style="display:block;width: 100%;;height:74px;z-index:3;">About Us</a>
+<td class="cell3"><a id="Button20" href="{% url 'about'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">About Us</a>
 </td>
-<td class="cell4"><a id="Button21" href="./login.html" style="display:block;width: 100%;;height:74px;z-index:4;">Log-in</a>
+<td class="cell4"><a id="Button21" href="{% url 'login'  %}" style="display:block;width: 100%;;height:74px;z-index:2;">Log-in</a>
 </td>
 </tr>
 </table>
