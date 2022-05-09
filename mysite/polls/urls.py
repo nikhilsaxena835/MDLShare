@@ -14,6 +14,7 @@ urlpatterns = [
     path('movie_details', views.getdetails, name = 'getdetails'),
     path('login', views.login, name = 'login'),
     path('profile', views.profile_page, name = 'profile_page'),
+    path('search', views.search, name = 'search'),
     #path('lists', TemplateView.as_view(template_name='lists.html'))
 ]
 urlpatterns += staticfiles_urlpatterns()

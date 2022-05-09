@@ -1,7 +1,7 @@
 import requests
 
-def movie():
-    r = requests.get("https://api.themoviedb.org/3/movie/4953?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
+def movie(id):
+    r = requests.get("https://api.themoviedb.org/3/movie/"+str(id)+"?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
     nr = requests.get(
         "https://api.themoviedb.org/3/movie/4953/credits?api_key=3af4a550e843ce38440160234f2569ed&language=en-US")
 
@@ -52,5 +52,3 @@ def movie():
 
     return name, strgenre, strprod, overview, vote, dbid, runtime, release_date, l['poster_path']
 
-
-movie()

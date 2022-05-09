@@ -8,6 +8,7 @@ from . import movie_recommendation, moviedetails, profile
 
 content = 'movie'
 loggedin = 'false'
+idf = 0
 import requests
 
 content_obj = list()
@@ -36,7 +37,9 @@ def reclists(request):
 
 
 def getdetails(request):
-    name, strgenre, strprod, overview, vote, dbid, runtime, release_date, sc = moviedetails.movie()
+    name, strgenre, strprod, overview, vote, dbid, runtime, release_date, sc = moviedetails.movie(idf)
+
+
     if (request.GET.get('watchlist')):
         data = [dbid, name, strgenre, runtime, release_date, vote, content]
         df = pd.DataFrame([data], columns=['imdb', 'name', 'genre', 'duration', 'year', 'rating', 'type'])
@@ -132,3 +135,49 @@ def login(request):
 def profile_page(request):
     profile.generate_charts()
     return render(request, "profile.html")
+
+
+def search(request):
+    global idf
+    search_string = 'Pirates'
+    r = requests.get(
+        "https://api.themoviedb.org/3/search/movie?api_key=3af4a550e843ce38440160234f2569ed&language=en-US&query=" + search_string + "&page=1&include_adult=false")
+    y = r.json()
+    res = y['results']
+    l = list()
+    names = list()
+    overviewl = list()
+    for i in range(4):
+        temp = res[i]
+        poster = temp['poster_path']
+        overview = temp['overview']
+        title = temp['original_title']
+        names.append(title)
+        overviewl.append(overview)
+        id = temp['id']
+        l.append(id)
+        response = requests.get("https://image.tmdb.org/t/p/w185/" + poster)
+        file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\search\\im" + str(i) + ".jpg", "wb")
+        file.write(response.content)
+        file.close()
+
+    if (request.GET.get('Button1')):
+        idf = l[0]
+
+
+
+    if (request.GET.get('Button3')):
+        idf = l[2]
+
+
+    if (request.GET.get('Button2')):
+        idf = l[1]
+
+
+
+    if (request.GET.get('Button4')):
+        idf = l[3]
+
+
+    return render(request, "search.html", {"n1" : names[0], "n2" : names[1], "n3" : names[2], "n4" : names[3], "o1" : overviewl[0], "o2" : overviewl[1]
+                                           , "o3" : overviewl[2], "o4" : overviewl[3]})
