@@ -278,8 +278,7 @@ def login(request):
     userpass = df['password'].values
     if userpass == passwrd:
         loggedin = 'true'
-        print('You are now logged in')
-        print(loggedin)
+        return param_redirect(request, 'index')
     return render(request, "login.html")
 
 
