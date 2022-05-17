@@ -22,12 +22,16 @@ def savetocsv(result_list, content_type):
         df3 = df3.append({'tmdb': temp["id"], 'type' : content_type}, ignore_index=True)
         print(df3)
 
-    df3.to_csv("D:\\mdl\\home.csv", mode = 'a', header = False, index = False)
+    df3.to_csv("D:\\mdl\\MDL\\home.csv", mode = 'a', header = False, index = False)
 
 
-def images():
-    filteron = False
-    getfilter = "Action"
+def images(filter="Action", sortv="0", content_type="movie"):
+    filename = "D:\\mdl\\MDL\\home.csv"
+    f = open(filename, "w+")
+    f.close()
+
+    filteron = True
+    getfilter = filter
     language1 = "en-US"
     language2 = "hi-IN"
 
@@ -38,17 +42,17 @@ def images():
 
     sort = (['popularity.desc', 'popularity.asc', 'vote_average.desc', 'vote_average.asc'])
     #if(buttonid == so and so)
-    sortby = sort[0]
+    sortby = sort[sortv]
 
     #if radio is on, set type to movie else to tv
-    content_type = "movie"
+
 
     key = dict[getfilter]
 
     if (filteron):
         apiresponse = requests.get(
-         "https://api.themoviedb.org/3/discover/"+content_type+"?api_key=3af4a550e843ce38440160234f2569ed&language="+language2+
-         "&sort_by="+sort+"&include_video=true&page=1&with_genres="+key)
+         "https://api.themoviedb.org/3/discover/" +content_type+ "?api_key=3af4a550e843ce38440160234f2569ed&language=" +language1+
+         "&sort_by=" +sortby+ "&include_video=true&page=1&with_genres=" +str(key))
 
         response_to_json = apiresponse.json()
 
@@ -62,7 +66,7 @@ def images():
               sc = str(temp["poster_path"])
               response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
               tempnew = str(i)
-              file = open("D:\\mdl\\home\\im" + tempnew + ".jpg","wb")
+              file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\home\\im" + tempnew + ".jpg","wb")
               file.write(response.content)
               file.close()
 
@@ -84,7 +88,7 @@ def images():
             sc = str(temp["poster_path"])
             response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
             tempnew = str(i)
-            file = open("D:\\mdl\\home\\im" + tempnew + ".jpg","wb")
+            file = open("D:\\mdl\\MDL\\mysite\\polls\\static\\images\\home\\im" + tempnew + ".jpg","wb")
             file.write(response.content)
             file.close()
         savetocsv(result_list, content_type)
@@ -105,7 +109,7 @@ def images():
         response = requests.get("https://image.tmdb.org/t/p/w185/" + sc)
         tempnew = str(i)
         file = open(
-            "D:\\mdl\\home\\t" + tempnew + ".jpg",
+            "D:\\mdl\\MDL\\mysite\\polls\\static\\images\\home\\t" + tempnew + ".jpg",
             "wb")
         file.write(response.content)
         file.close()

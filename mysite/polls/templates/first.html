@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Page</title>
-<meta name="generator" content="WYSIWYG Web Builder 17 Trial Version - https://www.wysiwygwebbuilder.com">
+{% load static %}
 <link rel="stylesheet" type="text/css" href="static/css/new_web_3.css">
 <link href="static/css/index.css" rel="stylesheet">
 <script src="static/js/jquery-3.6.0.min.js"></script>
@@ -27,23 +27,25 @@ $(document).ready(function()
 </script>
 </head>
 <body>
-<a href="https://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb17.png" alt="WYSIWYG Web Builder" style="position:absolute;left:5px;top:994px;margin: 0;border-width:0;z-index:250" width="16" height="16"></a>
 <table style="position:absolute;left:234px;top:8px;width:1096px;height:78px;z-index:73;" id="Table1">
 <tr>
-<td class="cell0"><p>&nbsp;</p></td>
-<td class="cell1"><p>&nbsp;</p></td>
-<td class="cell2"><a id="Button23" href="./profile.html" style="display:block;width: 100%;;height:74px;z-index:0;">Profile</a>
+<td class="cell0"><a id="Button24" href="{% url 'index'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Home</a>
 </td>
-<td class="cell3"><a id="Button20" href="./about.html" style="display:block;width: 100%;;height:74px;z-index:1;">About Us</a>
+<td class="cell1"><a id="Button22" href="{% url 'lists'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">Lists</a>
 </td>
-<td class="cell4"><a id="Button21" href="./login.html" style="display:block;width: 100%;;height:74px;z-index:2;">Log-in</a>
+<td class="cell2"><a id="Button23" href="{% url 'profile_page'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Profile</a>
+</td>
+<td class="cell3"><a id="Button20" href="{% url 'about'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">About Us</a>
+</td>
+<td class="cell4"><a id="Button21" href="{% url 'login'  %}" style="display:block;width: 100%;;height:74px;z-index:2;">Log-in</a>
 </td>
 </tr>
-
-
-
-    <form action = '#' method="get">
 </table>
+
+<form action = '#' method="get">
+
+
+
 <table style="position:absolute;left:22px;top:142px;width:159px;height:739px;z-index:74;" id="Table2">
 <tr>
 <td class="cell0"><div id="wb_Text1">
@@ -52,7 +54,7 @@ $(document).ready(function()
 </td>
 </tr>
 <tr>
-<td class="cell1"><input type="submit" id="Button10" name = "Action" value = "Action"  style="display:inline-block;width:155px;height:38px;z-index:7;">
+<td class="cell1"><input type="submit" id="Button1" name = "Action" value = "Action"  style="display:inline-block;width:155px;height:38px;z-index:7;">
 </td>
 </tr>
 <tr>
@@ -104,65 +106,89 @@ $(document).ready(function()
 
 
 
-</form>
+
 <div id="wb_Image1" style="position:absolute;left:18px;top:8px;width:137px;height:78px;z-index:75;">
 <img src="images/1.PNG" id="Image1" alt=""></div>
 <table style="position:absolute;left:232px;top:275px;width:1100px;height:479px;z-index:76;" id="Table3">
 <tr>
-<td class="cell0"><a id="Button1" href="./movie-details.html" style="display:inline-block;width:211px;height:231px;z-index:32;"></a>
+<td class="cell0"><a id="Button10" name="Button10"  style="display:inline-block;width:211px;height:231px;z-index:32;"><img src = "{% static 'images/im0.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell0"><a id="Button11" href="./movie-details.html" style="display:inline-block;width:212px;height:231px;z-index:33;"></a>
+<td class="cell0"><a id="Button11" name="Button11" style="display:inline-block;width:212px;height:231px;z-index:33;"><img src = "{% static 'images/im1.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell0"><a id="Button12" href="./movie-details.html" style="display:inline-block;width:213px;height:230px;z-index:34;"></a>
+<td class="cell0"><a id="Button12" name="Button12" style="display:inline-block;width:213px;height:230px;z-index:34;"><img src = "{% static 'images/im2.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell0"><a id="Button13" href="./movie-details.html" style="display:inline-block;width:211px;height:231px;z-index:35;"></a>
+<td class="cell0"><a id="Button13" name="Button13" style="display:inline-block;width:211px;height:231px;z-index:35;"><img src = "{% static 'images/im3.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell1"><a id="Button14" href="./movie-details.html" style="display:inline-block;width:219px;height:230px;z-index:36;"></a>
+<td class="cell1"><a id="Button14" name="Button14" style="display:inline-block;width:219px;height:230px;z-index:36;"><img src = "{% static 'images/im4.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
 </tr>
 <tr>
-<td class="cell0"><a id="Button34" href="./movie-details.html" style="display:inline-block;width:214px;height:230px;z-index:37;"></a>
+<td class="cell0"><a id="Button34" name="Button34" style="display:inline-block;width:214px;height:230px;z-index:37;"><img src = "{% static 'images/im5.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell0"><a id="Button35" href="./movie-details.html" style="display:inline-block;width:214px;height:230px;z-index:38;"></a>
+<td class="cell0"><a id="Button35" name="Button35" style="display:inline-block;width:214px;height:230px;z-index:38;"><img src = "{% static 'images/im6.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell0"><a id="Button36" href="./movie-details.html" style="display:inline-block;width:214px;height:230px;z-index:39;"></a>
+<td class="cell0"><a id="Button36" name="Button36" style="display:inline-block;width:214px;height:230px;z-index:39;"><img src = "{% static 'images/im7.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell0"><a id="Button37" href="./movie-details.html" style="display:inline-block;width:214px;height:230px;z-index:40;"></a>
+<td class="cell0"><a id="Button37" name="Button37" style="display:inline-block;width:214px;height:230px;z-index:40;"><img src = "{% static 'images/im8.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell1"><a id="Button38" href="./movie-details.html" style="display:inline-block;width:219px;height:230px;z-index:41;"></a>
+<td class="cell1"><a id="Button38" name="Button38" style="display:inline-block;width:219px;height:230px;z-index:41;"><img src = "{% static 'images/im9.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
 </tr>
 </table>
 <table style="position:absolute;left:229px;top:865px;width:1106px;height:479px;z-index:77;" id="Table4">
 <tr>
-<td class="cell0"><a id="Button15" href="./movie-details.html" style="display:inline-block;width:212px;height:229px;z-index:52;"></a>
+<td class="cell0"><a id="Button15" name="Button15" style="display:inline-block;width:212px;height:229px;z-index:52;"><img src = "{% static 'images/t0.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell1"><a id="Button16" href="./movie-details.html" style="display:inline-block;width:212px;height:230px;z-index:53;"></a>
+<td class="cell1"><a id="Button16" name="Button16" style="display:inline-block;width:212px;height:230px;z-index:53;"><img src = "{% static 'images/t1.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell2"><a id="Button17" href="./movie-details.html" style="display:inline-block;width:212px;height:232px;z-index:54;"></a>
+<td class="cell2"><a id="Button17" name="Button17" style="display:inline-block;width:212px;height:232px;z-index:54;"><img src = "{% static 'images/t2.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell3"><a id="Button18" href="./movie-details.html" style="display:inline-block;width:212px;height:230px;z-index:55;"></a>
+<td class="cell3"><a id="Button18" name="Button18" style="display:inline-block;width:212px;height:230px;z-index:55;"><img src = "{% static 'images/t3.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell4"><a id="Button19" href="./movie-details.html" style="display:inline-block;width:216px;height:229px;z-index:56;"></a>
+<td class="cell4"><a id="Button19" name="Button19" style="display:inline-block;width:216px;height:229px;z-index:56;"><img src = "{% static 'images/t4.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
 </tr>
 <tr>
-<td class="cell5"><a id="Button40" href="./movie-details.html" style="display:inline-block;width:216px;height:230px;z-index:57;"></a>
+<td class="cell5"><a id="Button40" name="Button40" style="display:inline-block;width:216px;height:230px;z-index:57;"><img src = "{% static 'images/t6.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell6"><a id="Button39" href="./movie-details.html" style="display:inline-block;width:216px;height:230px;z-index:58;"></a>
+<td class="cell6"><a id="Button39" name="Button39" style="display:inline-block;width:216px;height:230px;z-index:58;"><img src = "{% static 'images/t5.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell7"><a id="Button41" href="./movie-details.html" style="display:inline-block;width:216px;height:230px;z-index:59;"></a>
+<td class="cell7"><a id="Button41" name="Button41" style="display:inline-block;width:216px;height:230px;z-index:59;"><img src = "{% static 'images/t7.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell8"><a id="Button42" href="./movie-details.html" style="display:inline-block;width:216px;height:230px;z-index:60;"></a>
+<td class="cell8"><a id="Button42" name="Button42" style="display:inline-block;width:216px;height:230px;z-index:60;"><img src = "{% static 'images/t8.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
-<td class="cell9"><a id="Button43" href="./movie-details.html" style="display:inline-block;width:219px;height:230px;z-index:61;"></a>
+<td class="cell9"><a id="Button43" name="Button43" style="display:inline-block;width:219px;height:230px;z-index:61;"><img src = "{% static 'images/t9.jpg' %}" width= "211"
+   height="231"></a><input type = "submit" name = "Button10" value = "Know More">
 </td>
 </tr>
 </table>
-<a id="Button22" href="./lists.html" style="position:absolute;left:443px;top:9px;width:218px;height:74px;z-index:78;">Lists</a>
-<input type="text" id="Editbox1" style="position:absolute;left:628px;top:162px;width:392px;height:29px;z-index:79;" name="Editbox1" value="" spellcheck="false" placeholder="Search">
-<a id="Button25" href="./movie-details.html" style="position:absolute;left:1054px;top:161px;width:96px;height:41px;z-index:80;">Search</a>
-<a id="Button24" href="./index.html" style="position:absolute;left:236px;top:8px;width:202px;height:75px;z-index:81;">Home</a>
+
+
+<input type="text" id="Editbox1" style="position:absolute;left:628px;top:162px;width:392px;height:29px;z-index:79;" name="Editbox1" value=" " spellcheck="false" placeholder="Search">
+<input type="submit" id="Button25" name="SearchButton"  style="position:absolute;left:1054px;top:161px;width:96px;height:41px;z-index:80;">
+
+
+
+
 <div id="wb_Text2" style="position:absolute;left:237px;top:817px;width:123px;height:39px;z-index:82;">
 <span style="color:#8FA4BE;font-family:Arial;font-size:21px;"><strong>Trending<br></strong></span></div>
 <div id="wb_Text3" style="position:absolute;left:237px;top:229px;width:123px;height:39px;z-index:83;">
@@ -174,10 +200,10 @@ $(document).ready(function()
 <hr id="Line4" style="position:absolute;left:18px;top:857px;width:1331px;z-index:86;">
 <div id="wb_Line5" style="position:absolute;left:1px;top:98px;width:3px;height:755px;opacity:0.20;z-index:87;">
 <img src="images/img0003.png" id="Line5" alt="" width="-3" height="755"></div>
-<img src="images/img0008.png" id="Banner1" alt="MDL" style="border-width:0;position:absolute;left:17px;top:8px;width:138px;height:78px;z-index:88;" width="138" height="78">
+<img src="{% static 'images/img0022.png' %}" id="Banner1" alt="MDL" style="border-width:0;position:absolute;left:25px;top:8px;width:138px;height:78px;z-index:18;" width="138" height="78">
 <hr id="Line1" style="position:absolute;left:18px;top:1394px;width:1331px;z-index:89;">
 <div id="wb_FlipSwitch1" style="position:absolute;left:1200px;top:165px;width:80px;height:32px;z-index:90;">
-<input type="checkbox" role="switch" name="" id="FlipSwitch1" value="">
+<input type="checkbox" role="switch" name="" id="FlipSwitch1" value="tv">
 <label id="FlipSwitch1-label" for="FlipSwitch1">
 <span id="FlipSwitch1-inner"></span>
 <span id="FlipSwitch1-switch"></span>
@@ -186,14 +212,14 @@ $(document).ready(function()
 <div id="wb_Line6" style="position:absolute;left:174px;top:635px;width:3px;height:755px;opacity:0.20;z-index:91;">
 <img src="images/img0024.png" id="Line6" alt="" width="-3" height="755"></div>
 <div id="wb_FlipSwitch2" style="position:absolute;left:224px;top:160px;width:149px;height:42px;z-index:92;">
-<input type="checkbox" role="switch" name="" id="FlipSwitch2" value="">
+<input type="checkbox" role="switch" name="" id="FlipSwitch2" value="1">
 <label id="FlipSwitch2-label" for="FlipSwitch2">
 <span id="FlipSwitch2-inner"></span>
 <span id="FlipSwitch2-switch"></span>
 </label>
 </div>
 <div id="wb_FlipSwitch3" style="position:absolute;left:447px;top:160px;width:149px;height:42px;z-index:93;">
-<input type="checkbox" role="switch" name="" id="FlipSwitch3" value="">
+<input type="checkbox" role="switch" name="" id="FlipSwitch3" value="1">
 <label id="FlipSwitch3-label" for="FlipSwitch3">
 <span id="FlipSwitch3-inner"></span>
 <span id="FlipSwitch3-switch"></span>
@@ -203,5 +229,6 @@ $(document).ready(function()
 <span style="color:#8FA4BE;font-family:Arial;font-size:21px;"><strong>Popularity<br></strong></span></div>
 <div id="wb_Text5" style="position:absolute;left:447px;top:121px;width:123px;height:39px;z-index:95;">
 <span style="color:#8FA4BE;font-family:Arial;font-size:21px;"><strong>Rating<br></strong></span></div>
+</form>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<link rel="stylesheet" type="text/css" href="static/css/new_web_3.css">
+<link href="static/css/profile.css" rel="stylesheet">
+{% load static %}
+</head>
+<body>
+
+
+<table style="position:absolute;left:234px;top:8px;width:1096px;height:78px;z-index:73;" id="Table1">
+<tr>
+<td class="cell0"><a id="Button24" href="{% url 'index'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Home</a>
+</td>
+<td class="cell1"><a id="Button22" href="{% url 'lists'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">Lists</a>
+</td>
+<td class="cell2"><a id="Button23" href="{% url 'profile_page'  %}" style="display:block;width: 100%;;height:74px;z-index:0;">Profile</a>
+</td>
+<td class="cell3"><a id="Button20" href="{% url 'about'  %}" style="display:block;width: 100%;;height:74px;z-index:1;">About Us</a>
+</td>
+<td class="cell4"><a id="Button21" href="{% url 'login'  %}" style="display:block;width: 100%;;height:74px;z-index:2;">Log-in</a>
+</td>
+</tr>
+</table>
+<div id="wb_Image1" style="position:absolute;left:20px;top:9px;width:137px;height:78px;z-index:12;">
+<img src="images/1.PNG" id="Image1" alt=""></div>
+<div id="wb_Line2" style="position:absolute;left:176px;top:99px;width:3px;height:755px;opacity:0.20;z-index:13;">
+<img src="images/img0009.png" id="Line2" alt="" width="-3" height="755"></div>
+<div id="wb_Line3" style="position:absolute;left:1347px;top:100px;width:3px;height:740px;opacity:0.20;z-index:14;">
+<img src="images/img0010.png" id="Line3" alt="" width="-3" height="740"></div>
+<hr id="Line4" style="position:absolute;left:20px;top:858px;width:1331px;z-index:15;">
+<div id="wb_Line5" style="position:absolute;left:3px;top:99px;width:3px;height:755px;opacity:0.20;z-index:16;">
+<img src="images/img0011.png" id="Line5" alt="" width="-3" height="755"></div>
+<div id="wb_Image2" style="position:absolute;left:338px;top:241px;width:575px;height:426px;z-index:17;">
+
+
+<img src=" {% static 'images/plots/genre.jpg' %} " id="Image2" alt=""></div>
+<div id="wb_Text1" style="position:absolute;left:244px;top:153px;width:250px;height:31px;z-index:18;">
+<span style="color:#D99694;font-family:'Trebuchet MS';font-size:27px;">Most Watched Genre</span></div>
+
+
+<div id="wb_Image4" style="position:absolute;left:338px;top:813px;width:575px;height:375px;z-index:19;">
+<img src="{% static 'images/plots/duration.jpg' %}" id="Image4" alt=""></div>
+<div id="wb_Text3" style="position:absolute;left:244px;top:712px;width:250px;height:31px;z-index:20;">
+<span style="color:#D99694;font-family:'Trebuchet MS';font-size:27px;">Genre wise duration</span></div>
+
+
+<div id="wb_Image5" style="position:absolute;left:331px;top:1298px;width:582px;height:436px;z-index:21;">
+<img src="{% static 'images/plots/ratings.jpg' %}" id="Image5" alt="" width="582" height="437"></div>
+<div id="wb_Text4" style="position:absolute;left:244px;top:1209px;width:250px;height:53px;z-index:22;">
+<span style="color:#D99694;font-family:'Trebuchet MS';font-size:27px;">Genre wise ratings<br></span></div>
+
+
+<img src="{% static 'images/img0022.png' %}" id="Banner1" alt="MDL" style="border-width:0;position:absolute;left:25px;top:8px;width:138px;height:78px;z-index:18;" width="138" height="78">
+</body>
+</html>
